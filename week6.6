@@ -1,0 +1,14 @@
+n = int(input())  
+
+A = list(map(int, input().split()))
+
+B = list(map(int, input().split()))
+
+B_indices = {}
+
+for i, num in enumerate(B):
+    B_indices[num] = i
+
+index_mapping = [B_indices[num] for num in A]
+
+print(*index_mapping)
