@@ -1,0 +1,28 @@
+def get_age():
+    try:
+        # Prompt the user to enter their age
+        user_input = input()
+        
+        # Check if the input is empty (EOF)
+        if not user_input:
+            raise EOFError
+        
+        # Try to convert the input to an integer
+        age = int(user_input)
+        
+        # Check if the age is a valid positive integer
+        if age < 0:
+            print("Error: Please enter a valid age.")
+        else:
+            print(f"You are {age} years old.")
+    
+    except ValueError:
+        # Handle non-numeric inputs
+        print("Error: Please enter a valid age.")
+    
+    except EOFError:
+        # Handle EOF (Ctrl+D) when reading a line
+        print("Error: Please enter a valid age.")
+
+if __name__ == "__main__":
+    get_age()
