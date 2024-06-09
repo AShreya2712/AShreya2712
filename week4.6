@@ -1,0 +1,16 @@
+a=int(input())
+k=a
+n=a
+m=0
+while(k>0):
+    k=k//10
+    m+=1
+k=0
+for i in range(m,0,-1):
+    rem=n%10
+    k+=rem**i
+    n=n//10
+if(a<=k0:
+   print("Yes")
+else:
+   print("No")
