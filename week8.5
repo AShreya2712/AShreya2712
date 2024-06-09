@@ -1,0 +1,39 @@
+def highest_average_score(students):
+    averages = {name: sum(marks) / len(marks) for name, marks in students.items()}
+    max_average = max(averages.values())
+    return sorted([name for name, avg in averages.items() if avg == max_average])
+
+def highest_assignment_marks(students):
+    max_assignment_marks = max(student[1] for student in students.values())
+    return sorted([name for name, marks in students.items() if marks[1] == max_assignment_marks])
+
+def lowest_lab_marks(students):
+    min_lab_marks = min(student[2] for student in students.values())
+    return sorted([name for name, marks in students.items() if marks[2] == min_lab_marks])
+
+def lowest_average_score(students):
+    averages = {name: sum(marks) / len(marks) for name, marks in students.items()}
+    min_average = min(averages.values())
+    return sorted([name for name, avg in averages.items() if avg == min_average])
+
+
+n = int(input())
+students = {}
+for _ in range(n):
+    name, test, assignment, lab = input().split()
+    students[name] = [int(test), int(assignment), int(lab)]
+
+
+highest_avg = highest_average_score(students)
+highest_assignment = highest_assignment_marks(students)
+lowest_lab = lowest_lab_marks(students)
+lowest_avg = lowest_average_score(students)
+
+print(*highest_avg)
+print(*highest_assignment)
+
+print(*lowest_lab)
+
+print(*lowest_avg)
+
+
