@@ -1,0 +1,19 @@
+def factor(n, p):
+    factors = []
+    for i in range(1, int(n**0.5) + 1):
+        if n % i == 0:
+            factors.append(i)
+            if i != n // i:
+                factors.append(n // i)
+    factors.sort()
+    if p <= len(factors):
+        return factors[p - 1]
+    else:
+        return 0
+
+# Input number and position
+n = int(input())
+p = int(input())
+
+# Calculate and print the pth factor
+print(factor(n, p))
